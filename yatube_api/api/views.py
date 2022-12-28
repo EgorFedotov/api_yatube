@@ -32,7 +32,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    """Вьюсет комментов."""
+    """Вьюсет коментариев."""
     serializer_class = CommentSerializer
 
     def get_post(self):
@@ -42,7 +42,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         serializer.save(post=self.get_post(), author=self.request.user)
 
     def get_queryset(self):
-        """кверисет комментов к посту"""
+        """кверисет коментариев к посту"""
         return self.get_post().comments.all()
 
     def perform_update(self, serializer):
